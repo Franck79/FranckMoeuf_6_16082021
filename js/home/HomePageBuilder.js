@@ -1,5 +1,4 @@
 'use strict';
-/////////////////////////////////////////
 
 import Filter from './FilterTags.js';
 import Scroll from './Scroll.js';

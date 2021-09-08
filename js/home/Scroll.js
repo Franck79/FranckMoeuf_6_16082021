@@ -1,8 +1,8 @@
 'use strict';
-/////////////////////////////////////////
 
 export default class Scroll {
-    // Retrieve the user's position, to bring them back to the top of the page
+    // On récupère la position de l'utilisateur afin de le ramener en haut de la page.
+    // EventListener sur le scroll.
     scrollButton() {
         window.addEventListener("scroll", () => {
             let button = document.getElementById("main-photographers-link");
