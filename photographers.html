@@ -20,12 +20,13 @@
                 alt="FishEye Home Page"></a>
     </header>
     <main>
-        <!-- HEADER -->
+
+        <!-- Header -->
         <header id="ph-profil" aria-label="photographer information">
             <section id="ph-profil-header"></section>
         </header>
 
-        <!-- DROPDOWNSORT -->
+        <!-- DropDown Sort -->
         <div class="works-sort">
             <span id="sort-text">Trier par</span>
             <div id="sort-wrapper">
@@ -40,13 +41,13 @@
             </div>
         </div>
 
-        <!-- WORK -->
+        <!-- Médias Photographes -->
         <section id='ph-works' aria-label='photographer works'></section>
 
-        <!-- BOX -->
+        <!-- Bloc Likes et Prix -->
         <div id="box" aria-label="photographer likes and price"></div>
 
-        <!--MODAL-->
+        <!--Modal-->
         <div role="dialog" id="form-dialog" aria-label="contact me form" aria-labelledby="form-title"
             aria-hidden="true">
             <form action="photographer-page.html" method="POST" id="contact-form">
@@ -59,34 +60,39 @@
                         <span class="fas fa-times close-form-icon" aria-hidden="true"></span>
                     </button>
                 </header>
-                <!-- FIRST NAME -->
+
+                <!-- Prénom -->
                 <div class="formData" data-error="Vous devez entrer votre prénom." data-error-visible="false">
                     <label for="first-name" id="label-firstname">Prénom</label>
                     <input name="first-name" id="first-name" aria-labelledby="label-firstname" placeholder="Prénom">
                 </div>
-                <!-- LAST NAME -->
+
+                <!-- Nom -->
                 <div class="formData" data-error="Vous devez entrer votre nom." data-error-visible="false">
                     <label for="last-name" id="label-lastname">Nom</label>
                     <input name="last-name" id="last-name" aria-labelledby="label-lastname" placeholder="Nom">
                 </div>
-                <!-- EMAIL -->
+
+                <!-- Email -->
                 <div class="formData" data-error="Vous devez entrer un email valide." data-error-visible="false">
                     <label for="email" id="label-email">Email</label>
                     <input type="email" name="email" id="email" aria-labelledby="label-email"
                         placeholder="exemple@email.com">
                 </div>
-                <!-- MESSAGE -->
+
+                <!-- Message -->
                 <div class="formData" data-error="Vous devez entrer votre message." data-error-visible="false">
                     <label for="message" id="label-message">Votre message</label>
                     <textarea name="message" id="message" cols="20" rows="5" aria-labelledby="label-message"
                         placeholder="Votre message..."></textarea>
                 </div>
-                <!-- SUBMIT -->
+
+                <!-- Submit -->
                 <input type="submit" value="Envoyer" class="form-submit" title="Send">
             </form>
         </div>
 
-        <!--LIGHTBOX-->
+        <!--LightBox-->
         <aside id="works-lightbox" aria-hidden="true">
             <article id="lightbox-body" role='dialog'>
                 <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
