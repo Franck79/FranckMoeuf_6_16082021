@@ -1,13 +1,12 @@
 'use strict';
-/////////////////////////////////////////
 
-// DATA
+// Données Json
 import ApiFishEye from './provider/ApiFishEye.js';
 
-// HOMEPAGE
+// Home Page
 import HomePageBuilder from './home/HomePageBuilder.js';
 
-// PH PAGES
+// Page détail des Photographes
 import PhotographerProfil from './photographers/PhotographerProfil.js';
 import DropDownMenu from './photographers/DropDownSort.js';
 import MediaBuilder from './photographers/MediaBuilder.js';
@@ -15,17 +14,17 @@ import MediaBuilder from './photographers/MediaBuilder.js';
 (function appDispatch() {
     new ApiFishEye().getDataFishEye().then((data) => {
         if (window.location.pathname.includes("/photographers.html")) {
-            // PHOTOGRAPHER PROFIL HEADER
+            // Header du profil d'un photographe
             new PhotographerProfil().displayPhotographerProfil(data);
 
-            // DROPDOWN MENU
+            // DropDonw sort list menu
             new DropDownMenu().dropDown(data);
 
-            //PHOTOGRAPHER GALLERY & LIKES BOX
+            // Gallerie des photos et likes
             new MediaBuilder().photographersMedias(data);
             return
         }
-        // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
+        // Home page (Photographes, Scroll et Filtres)
         new HomePageBuilder().displayPhotographers(data);
     }).catch(() => {
         console.error('Failed to load ApiFishEye');

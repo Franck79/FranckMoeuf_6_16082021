@@ -1,9 +1,8 @@
 'use strict';
-/////////////////////////////////////////
 
 export default class Form {
     fields() {
-        // DOM ELEMENTS FORM FIELDS VALIDATION
+        // Validation des champs en récuperant les éléments du DOM.
         let form = document.getElementById('contact-form');
         let firstName = document.getElementById('first-name');
         let lastName = document.getElementById('last-name');
@@ -11,7 +10,7 @@ export default class Form {
         let message = document.getElementById('message');
         const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
 
-        // SEND FORM
+        // Envoie du FORM
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             let isValid = this.checkNames(firstName, regex) &&
@@ -48,7 +47,7 @@ export default class Form {
         this.checkMessage(message);
     }
 
-    // Check FirstName and LastName
+    // Vérification et validation des champs FirstName et LastName
     checkNames(elt, regex) {
         if (elt.value.trim().length < 2 || elt.value.trim() === "" || !elt.value.match(regex)) {
             elt.parentElement.setAttribute('data-error-visible', 'true');
@@ -60,7 +59,7 @@ export default class Form {
             return true;
         }
     }
-
+    // Vérification et validation du champ Email
     checkEmail(elt) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (elt.value.trim().match(re)) {
@@ -72,7 +71,7 @@ export default class Form {
         elt.style.border = '2px solid #e54858';
         return false;
     }
-
+    // Vérification et validation du champ textarea.
     checkMessage(elt) {
         if (elt.value.trim() === '' || elt.value.trim() == null) {
             elt.parentElement.setAttribute('data-error-visible', 'true');

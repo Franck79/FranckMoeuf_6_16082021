@@ -1,10 +1,9 @@
 'use strict';
-/////////////////////////////////////////
 
 import GalleryFactory from '../Factory/GalleryFactory.js';
 
 export default class DropDownMenu {
-    // Events, open/close the dropDownMenu
+    // Événements ouverture et fermeture du menu déroulant
     dropDown(data) {
         let arrowOpen = document.getElementsByClassName('sort-btn');
         let arrowClose = document.getElementsByClassName('arrow-up-close');
@@ -23,7 +22,7 @@ export default class DropDownMenu {
         }
     }
 
-    // SORT MEDIAS (POPULARITY, DATA, TITLE)
+    // Tri des médias par Popularité, Date et Titre.
     sortMedias(data) {
         let mediaArraySort = [];
         let media = data.media;
@@ -63,7 +62,7 @@ export default class DropDownMenu {
     }
 
     displaySortMedia(mediaArraySort) {
-        // DISPLAY PHOTOGRAPHERS WORKS WITH SORT
+        // Affichage des médias d'un photographe avec le tri.
         document.getElementById("ph-works").innerHTML = "";
         new GalleryFactory().builder(mediaArraySort);
     }

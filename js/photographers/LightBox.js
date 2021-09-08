@@ -1,12 +1,12 @@
 'use strict';
-/////////////////////////////////////////
 
 export default class LightBox {
     constructor() {
         this.currentIndex = 0;
     }
 
-    // initialize the lightbox when clicking on a media, call the functions allowing to navigate in the lightbox
+    // initialisation de la lightbox en cliquant sur un média, 
+    // On appelle les fonctions permettant de naviguer dans la lightbox.
     init(currentMedia, currentMediaName) {
         let getMedias = Array.from(document.getElementsByClassName('ph-media'));
         getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
@@ -27,7 +27,7 @@ export default class LightBox {
         return this
     }
 
-    // return to previous media
+    // On retourne le média précédent.
     previous(elt, media, name) {
         elt.addEventListener('click', () => {
             this.currentIndex -= 1;
@@ -47,7 +47,7 @@ export default class LightBox {
         })
     }
 
-    // turn to the next media
+    // On passe au média suivant.
     next(elt, media, name) {
         elt.addEventListener('click', () => {
             this.currentIndex += 1;
@@ -79,13 +79,13 @@ export default class LightBox {
             let lightBoxMedia = document.getElementById('works-lightbox-media');
             let lightBoxName = document.getElementById('works-lightbox-name');
 
-            // ESCAPE TO CLOSE
+            // Touche Escape pour fermer.
             if (key.code == "Escape") {
                 let lightBox = document.getElementById('works-lightbox');
                 lightBox.style.display = 'none';
             }
 
-            // ARROW RIGHT TO STEP RIGHT
+            // Flèche droite pour passer au média suivant.
             else if (key.code == "ArrowRight") {
                 this.currentIndex += 1;
 
@@ -100,7 +100,7 @@ export default class LightBox {
                 lightBoxName.innerHTML = `${nameSrc}`;
             }
 
-            // ARROW LEFT TO STEP LEFT
+            // Flèche gauche pour passer au média précédent.
             else if (key.code == "ArrowLeft") {
                 this.currentIndex -= 1;
 
