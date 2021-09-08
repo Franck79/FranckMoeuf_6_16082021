@@ -1,8 +1,7 @@
 'use strict';
-/////////////////////////////////////////
 
 export default class VideoFactory {
-    // CREATE ELEMENT VIDEO WITH CONTROLS, SRC, ROLE
+    // Création d'un élément video avec controls, src et role.
     createHTML(element) {
         let eltVideo = document.createElement('video');
         eltVideo.setAttribute("controls", "controls")

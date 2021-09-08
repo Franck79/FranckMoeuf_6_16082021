@@ -1,5 +1,4 @@
 'use strict';
-/////////////////////////////////////////
 
 import MediaFactory from './MediaFactory.js';
 import Lightbox from '../photographers/LightBox.js';
@@ -9,7 +8,7 @@ export default class GalleryFactory {
         this.totalLike = 0;
     }
     
-    // build the gallery with the different medias and the lightbox
+    // Affichage de la galerie avec les différents médias et la lightbox.
     builder(dataMedia) {
         const id = window.location.search.split('id=')[1];
         let mediaFactory = new MediaFactory();
