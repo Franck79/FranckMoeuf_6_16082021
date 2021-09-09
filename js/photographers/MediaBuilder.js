@@ -1,16 +1,16 @@
 'use strict';
 
-import GalleryFactory from '../Factory/GalleryFactory.js';
-import LikeSubscriber from './Likes.js';
+import GalleryMedia from '../Medias/GalleryMedia.js';
+import Likes from './Likes.js';
 
 export default class MediaBuilder {
     // On appelle la GalleryFactory 
     // pour créer la section média avec la fonction 'Likes'.
     photographersMedias(data) {
         let media = data.media;
-        let gallery = new GalleryFactory().builder(media);
+        let gallery = new GalleryMedia().builder(media);
         this.boxLikesAndPrice(gallery.totalLike, data.photographers);
-        new LikeSubscriber();
+        new Likes();
     }
 
     // On créé un bloc contenant le nombre total de likes et le prix du photographe.

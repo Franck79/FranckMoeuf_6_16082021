@@ -1,10 +1,9 @@
 'use strict';
-/////////////////////////////////////////
 
-// GET THE DATA FISH (PHOTOGRAPHERS & MEDIAS)
+// Récupération des données Photographes et médias
 export default class ApiFishEye {
     async getDataFishEye() {
-        let url = 'Api/FishEye/photographers.json';
+        let url = 'Data/photographers.json';
         let response = await fetch(url);
         let data = await response.json();
 

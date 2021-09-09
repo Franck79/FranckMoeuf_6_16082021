@@ -1,9 +1,9 @@
 'use strict';
 
-import MediaFactory from './MediaFactory.js';
+import SwitchMedia from './SwitchMedia.js';
 import Lightbox from '../photographers/LightBox.js';
 
-export default class GalleryFactory {
+export default class GalleryMedia {
     constructor() {
         this.totalLike = 0;
     }
@@ -11,7 +11,7 @@ export default class GalleryFactory {
     // Affichage de la galerie avec les différents médias et la lightbox.
     builder(dataMedia) {
         const id = window.location.search.split('id=')[1];
-        let mediaFactory = new MediaFactory();
+        let media = new SwitchMedia();
         let currentMedia = [];
         let currentMediaName = [];
 
@@ -19,7 +19,7 @@ export default class GalleryFactory {
             if (id == element.photographerId) {
                 let sectionPhWorks = document.getElementById('ph-works');
                 let articlePhWork = document.createElement("article");
-                let mediaHTML = mediaFactory.renderMedia(element);
+                let mediaHTML = media.renderMedia(element);
                 let workTemplate = `
                 <a href='#' title=${element.photoName}>
                 ${mediaHTML.outerHTML}

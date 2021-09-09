@@ -1,11 +1,12 @@
 'use strict';
-/////////////////////////////////////////
 
 import Modal from './Modal.js';
 import Form from './Form.js';
 
 export default class PhotographerProfil {
-    // Check on which page the user is located, if the position corresponds with the photographer's "id", create the photographer's 'Profile' section
+    // Vérification sur quelle page se trouve l'utilisateur, 
+    // si la position correspond à l'identifiant du photographe, 
+    // on créé la section Profil du photographe.
     displayPhotographerProfil(data) {
         let photographersData = data.photographers;
         const id = window.location.search.split('id=')[1];

@@ -1,6 +1,6 @@
 'use strict';
 
-import GalleryFactory from '../Factory/GalleryFactory.js';
+import GalleryMedia from '../Medias/GalleryMedia.js';
 
 export default class DropDownMenu {
     // Événements ouverture et fermeture du menu déroulant
@@ -64,6 +64,6 @@ export default class DropDownMenu {
     displaySortMedia(mediaArraySort) {
         // Affichage des médias d'un photographe avec le tri.
         document.getElementById("ph-works").innerHTML = "";
-        new GalleryFactory().builder(mediaArraySort);
+        new GalleryMedia().builder(mediaArraySort);
     }
 }

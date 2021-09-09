@@ -1,6 +1,6 @@
 'use strict';
 
-export default class VideoFactory {
+export default class VideoMedia {
     // Création d'un élément video avec controls, src et role.
     createHTML(element) {
         let eltVideo = document.createElement('video');

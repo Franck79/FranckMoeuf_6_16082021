@@ -3,9 +3,9 @@
 import Filter from './FilterTags.js';
 import Scroll from './Scroll.js';
 
-// DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
+// Affichage de tous les photographes
 export default class HomePageBuilder {
-    // Build the photographers section, call the 'filtertags' function and the 'passer au contenu' button
+    // Section des phpotographes, on appelle la fonction "filtertags" le bouton "Passer au contenu".
     displayPhotographers(data) {
         let photographers = data.photographers;
         photographers.map(photographe => {
