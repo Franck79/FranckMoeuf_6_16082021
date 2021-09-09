@@ -1,5 +1,3 @@
-'use strict';
-
 import GalleryMedia from '../Medias/GalleryMedia.js';
 
 export default class DropDownMenu {

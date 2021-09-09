@@ -1,6 +1,4 @@
-'use strict';
-
-export default class LikeSubscriber {
+export default class Likes {
     // ajout ou suppression d'un like en cliquant sur l'icône like. 
     constructor() {
         let media = document.getElementById('ph-works');

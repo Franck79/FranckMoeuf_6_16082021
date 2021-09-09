@@ -1,5 +1,3 @@
-'use strict';
-
 export default class Scroll {
     // On récupère la position de l'utilisateur afin de le ramener en haut de la page.
     // EventListener sur le scroll.

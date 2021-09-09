@@ -1,6 +1,3 @@
-'use strict';
-
-
 // Fonction Filter Tags
 export default class Filter {
     // Filtres des tags

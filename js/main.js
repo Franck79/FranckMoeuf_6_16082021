@@ -1,5 +1,3 @@
-'use strict';
-
 // Données Json
 import ApiFishEye from './provider/ApiFishEye.js';
 

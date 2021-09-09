@@ -1,5 +1,3 @@
-'use strict';
-
 import GalleryMedia from '../Medias/GalleryMedia.js';
 import Likes from './Likes.js';
 

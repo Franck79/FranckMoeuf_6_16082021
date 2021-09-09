@@ -1,4 +1,3 @@
-'use strict';
 
 // Récupération des données Photographes et médias
 export default class ApiFishEye {

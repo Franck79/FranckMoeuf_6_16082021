@@ -1,4 +1,3 @@
-'use strict';
 
 export default class VideoMedia {
     // Création d'un élément video avec controls, src et role.

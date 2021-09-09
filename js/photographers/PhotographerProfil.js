@@ -1,5 +1,3 @@
-'use strict';
-
 import Modal from './Modal.js';
 import Form from './Form.js';
 

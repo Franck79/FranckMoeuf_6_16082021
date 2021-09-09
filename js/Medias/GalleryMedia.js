@@ -1,5 +1,3 @@
-'use strict';
-
 import SwitchMedia from './SwitchMedia.js';
 import Lightbox from '../photographers/LightBox.js';
 

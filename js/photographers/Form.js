@@ -1,5 +1,3 @@
-'use strict';
-
 export default class Form {
     fields() {
         // Validation des champs en récuperant les éléments du DOM.

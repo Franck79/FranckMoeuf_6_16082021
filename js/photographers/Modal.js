@@ -1,33 +1,32 @@
-'use strict';
 
 export default class Modal {
     // Evénements lancement du modal en cliquant sur le bouton 'contactez-moi'.
     // Et fermeture sur l'icone 'X'.
     modal(data) {
-        let modalBtn = document.getElementById("ph-contact");
-        let closeBtn = document.getElementsByClassName('close-form-icon');
+        let modalButton = document.getElementById("ph-contact");
+        let closeButton = document.getElementsByClassName('close-form-icon');
 
-        if (modalBtn) {
-            modalBtn.addEventListener('click', this.launchModal);
+        if (modalButton) {
+            modalButton.addEventListener('click', this.launchModal);
             this.formPhName(data);
         }
-        if (closeBtn) {
-            closeBtn[0].addEventListener('click', this.closeModal);
+        if (closeButton) {
+            closeButton[0].addEventListener('click', this.closeModal);
         }
     }
 
     // Lancement du Modal.
     launchModal() {
-        let modalbg = document.getElementById("form-dialog");
+        let modalBackground = document.getElementById("form-dialog");
 
-        modalbg.style.display = 'block';
+        modalBackground.style.display = 'block';
     }
 
     // Fermeture du Modal.
     closeModal() {
-        let modalbg = document.getElementById("form-dialog");
+        let modalBackground = document.getElementById("form-dialog");
 
-        modalbg.style.display = 'none';
+        modalBackground.style.display = 'none';
     }
 
     // Affichage du nom d'un photographe dans le titre du formulaire.

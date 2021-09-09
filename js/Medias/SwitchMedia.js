@@ -1,4 +1,3 @@
-'use strict';
 
 import ImageMedia from './ImageMedia.js';
 import VideoMedia from './VideoMedia.js';
