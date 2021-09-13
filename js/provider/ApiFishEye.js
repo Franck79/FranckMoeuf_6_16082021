@@ -1,16 +1,16 @@
 
-// Récupération des données Photographes et médias
+// Récupération des données photograph-es et médias
 export default class ApiFishEye {
     async getDataFishEye() {
         let url = 'Data/photographers.json';
         let response = await fetch(url);
         let data = await response.json();
 
-        const dataPhotographers = [...data.photographers];
+        const dataphotographers = [...data.photographers];
         const dataMedias = [...data.media];
 
         return {
-            'photographers': dataPhotographers,
+            'photographers': dataphotographers,
             'media': dataMedias
         };
     }

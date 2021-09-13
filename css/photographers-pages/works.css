@@ -1,5 +1,5 @@
 /* Médias d'un photographe */
-#ph-works {
+#photograph-works {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -15,7 +15,7 @@
     margin-left: -.3rem;
 }
 
-.ph-work-elt {
+.photograph-work-elt {
     color: #901c1c;
     font-size: 1.1em;
     font-weight: 500;
@@ -23,49 +23,49 @@
     width: 20.9375rem;
 }
 
-.ph-work-elt .fa-heart:hover,
-.ph-work-elt img:hover,
-.ph-work-elt video:hover {
+.photograph-work-elt .fa-heart:hover,
+.photograph-work-elt img:hover,
+.photograph-work-elt video:hover {
     cursor: pointer;
 }
 
-.ph-work-elt .ph-work-title {
+.photograph-work-elt .photograph-work-title {
     width: 14.0625rem;
 }
 
-.ph-work-elt img,
-.ph-work-elt video {
+.photograph-work-elt img,
+.photograph-work-elt video {
     border-radius: .3125rem;
     height: 11.875rem;
     object-fit: cover;
     width: 20.9375rem;
 }
 
-.ph-work-elt-text {
+.photograph-work-elt-text {
     align-items: center;
     display: flex;
     justify-content: space-between;
     margin-top: 0;
 }
 
-.ph-work-title {
+.photograph-work-title {
     font-size: 1em;
     font-weight: 400;
 }
 
 @media (min-width: 1300px) {
-    #ph-works {
+    #photograph-works {
         justify-content: space-between;
         margin: 2.8125rem 6.25rem;
         padding: 0;
     }
 
-    .ph-work-elt {
+    .photograph-work-elt {
         width: 21.875rem;
     }
 
-    .ph-work-elt img,
-    .ph-work-elt video {
+    .photograph-work-elt img,
+    .photograph-work-elt video {
         height: 18.75rem;
         width: 21.875rem;
     }

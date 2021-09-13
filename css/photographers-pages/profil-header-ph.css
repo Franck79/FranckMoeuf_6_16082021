@@ -1,24 +1,24 @@
 /* Header du Profil d'un photographe */
-.ph-city {
+.photograph-city {
     color: #901c1c;
     font-size: .9em;
     margin: 0;
 }
 
-.ph-infos h2 {
+.photograph-infos h2 {
     color: #D3573C;
     font-size: 2.4em;
     font-weight: 400;
     margin: 0;
 }
 
-.ph-profil {
+.photograph-profil {
     align-items: center;
     display: flex;
     justify-content: space-between;
 }
 
-.ph-profil button {
+.photograph-profil button {
     background: #901c1c;
     border: none;
     border-radius: 5px;
@@ -32,25 +32,25 @@
     width: 170px;
 }
 
-.ph-profil button:hover {
+.photograph-profil button:hover {
     background: #651414;
     transform: scale(1.05);
 }
 
-.ph-profil img {
+.photograph-profil img {
     border-radius: 50%;
     height: 100px;
     object-fit: cover;
     width: 100px;
 }
 
-.ph-tagline {
+.photograph-tagline {
     color: #525252;
     font-size: .9em;
     margin: 0;
 }
 
-.ph-tags {
+.photograph-tags {
     border: .5px solid #C4C4C4;
     border-radius: .6875rem;
     color: #901C1C;
@@ -61,13 +61,13 @@
     transition: all .2s;
 }
 
-.ph-tags:hover {
+.photograph-tags:hover {
     background-color: #901C1C;
     color: #fff;
 }
 
 @media (max-width: 1200px) {
-    .ph-profil button {
+    .photograph-profil button {
         left: 0;
         margin-left: auto;
         margin-right: auto;
@@ -77,12 +77,12 @@
 }
 
 @media (min-width: 1200px) {
-    .ph-profil {
+    .photograph-profil {
         background-color: #FAFAFA;
         margin: 0 20px;
     }
 
-    .ph-profil button {
+    .photograph-profil button {
         height: 55px;
         left: 42rem;
         position: absolute;
@@ -91,28 +91,28 @@
 }
 
 @media (min-width: 900px) {
-    .ph-city {
+    .photograph-city {
         font-size: 20px;
         margin-bottom: 1rem;
     }
 
-    .ph-infos h2 {
+    .photograph-infos h2 {
         font-size: 50px;
         font-weight: 400;
         margin-bottom: 1rem;
     }
 
-    .ph-profil {
+    .photograph-profil {
         background: #fafafa;
         padding: 2rem;
     }
 
-    .ph-profil img {
+    .photograph-profil img {
         height: 200px;
         width: 200px;
     }
 
-    .ph-tagline {
+    .photograph-tagline {
         color: #525252;
         font-size: 15px;
         margin-bottom: 1rem;

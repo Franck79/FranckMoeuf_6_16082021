@@ -6,7 +6,7 @@ export default class LightBox {
     // initialisation de la lightbox en cliquant sur un média, 
     // On appelle les fonctions permettant de naviguer dans la lightbox.
     init(currentMedia, currentMediaName) {
-        let getMedias = Array.from(document.getElementsByClassName('ph-media'));
+        let getMedias = Array.from(document.getElementsByClassName('photograph-media'));
         getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
             let lightBoxMedia = document.getElementById('works-lightbox-media');
             let lightBoxName = document.getElementById('works-lightbox-name');
