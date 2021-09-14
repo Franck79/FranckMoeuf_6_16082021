@@ -14,7 +14,7 @@ export default class GalleryMedia {
     builder(dataMedia) {
         // On récupère l'Id du photographe
         const id = window.location.search.split('id=')[1];
-        
+    
         let media = new SwitchMedia();
         let currentMedia = [];
         let currentMediaName = [];
@@ -44,6 +44,7 @@ export default class GalleryMedia {
                     </div>
                 </div>
                 `
+                console.log(element.date);
                 // Insert du template dans les balises articles
                 articlePhWork.innerHTML = workTemplate;
                 // Balises articles attachées au parent, section 'photograph-works'.

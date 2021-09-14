@@ -66,7 +66,7 @@ export default class DropDownMenu {
                 // Tri par date
                 mediaArraySort = media.sort((a, b) => {
 
-                    return new Date(a.date).valueOf() - new Date(b.date).valueOf();
+                    return new Date(b.date).valueOf() - new Date(a.date).valueOf();
 
                 })
 
@@ -89,7 +89,7 @@ export default class DropDownMenu {
             }
 
             this.displaySortMedia(mediaArraySort);
-            
+
         }));
     }
 
