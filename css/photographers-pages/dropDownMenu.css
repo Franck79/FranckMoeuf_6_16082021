@@ -6,9 +6,9 @@
 @media (min-width: 900px) {
     .arrow-down-open {
         color: #fff;
-        left: 18.5rem;
+        left: 18.8rem;
         position: absolute;
-        top: 26.4rem;
+        top: 27.09rem;
     }
 
     .arrow-up-close {
@@ -18,12 +18,57 @@
         top: 1.55rem;
     }
 
-    .hidden-sort li {
+    .hidden-sort #sort-pop {
         background: #901c1c;
         color: #fff;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 500;
         padding: 1.25rem;
+        border-radius: 5px 5px 0 0;
+        border: 0;
+    }
+
+    .hidden-sort #sort-pop:after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 20px;
+        border-bottom: 1px solid #fff;
+        position: absolute;
+        right: 1.1rem;
+        top: 2.5rem;
+    }
+
+    .hidden-sort #sort-date {
+        background: #901c1c;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 1.25rem;
+        border-radius: 0 0 0 0;
+        border: 0;
+    }
+
+    .hidden-sort #sort-date:after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 20px;
+        border-bottom: 1px solid #fff;
+        position: absolute;
+        right: 1.1rem;
+    }
+
+    .hidden-sort #sort-title {
+        background: #901c1c;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 1.25rem;
+        border-radius: 0 0 5px 5px;
+        border: 0;
     }
 
     .sort-btn {
@@ -41,6 +86,7 @@
         position: absolute;
         top: 25.6rem;
         width: 10rem;
+        height: 3.8rem;
     }
 
     .works-sort {

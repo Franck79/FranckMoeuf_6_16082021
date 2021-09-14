@@ -5,9 +5,11 @@ export default class DropDownMenu {
     dropDown(data) {
 
         let arrowOpen = document.getElementsByClassName('sort-btn');
+        console.log(arrowOpen);
         let arrowClose = document.getElementsByClassName('arrow-up-close');
         let hiddenSort = document.getElementsByClassName('hidden-sort');
-
+        // Si on clique sur la fleche d'ouverture
+        // la liste cachée apparait.
         if (arrowOpen) {
 
             arrowOpen[0].addEventListener('click', () => {
@@ -19,6 +21,8 @@ export default class DropDownMenu {
             this.sortMedias(data);
 
         }
+        // Si on clique sur la flèche de fermeture
+        // le bloc cachée disparait.
         if (arrowClose) {
 
             arrowClose[0].addEventListener('click', () => {
@@ -33,13 +37,17 @@ export default class DropDownMenu {
     sortMedias(data) {
 
         let mediaArraySort = [];
-        let media = data.media;
-        let buttonSort = document.querySelector('.sort-btn');
-        let hiddenSort = document.getElementsByClassName('hidden-sort');
-        let sortButton = Array.from(document.getElementsByClassName('sort'));
-        console.log(sortButton);
-        sortButton.forEach((btn, index) => btn.addEventListener('click', () => {
 
+        let media = data.media;
+        // Bouton
+        let buttonSort = document.querySelector('.sort-btn');
+        // bloc ul
+        let hiddenSort = document.getElementsByClassName('hidden-sort');
+        // éléments li
+        let sortButton = Array.from(document.getElementsByClassName('sort'));
+        // Pour chaque élément li EventListener sur le click.
+        sortButton.forEach((btn, index) => btn.addEventListener('click', () => {
+            // ul caché par défaut.
             hiddenSort[0].style.display = "none";
 
             if (index == 0) {
@@ -79,13 +87,16 @@ export default class DropDownMenu {
                     }
                 })
             }
+
             this.displaySortMedia(mediaArraySort);
+            
         }));
     }
 
     displaySortMedia(mediaArraySort) {
-        // Affichage des médias d'un photographe avec le tri.
+    
         document.getElementById("photograph-works").innerHTML = "";
+        // On met a jour la gallerie des médias grace au tableau mediaArraySort.
         new GalleryMedia().builder(mediaArraySort);
     }
 }

@@ -21,7 +21,10 @@ export default class photographerProfil {
                     <h2>${photographers[0].name}</h2>
                     <p class="photograph-city">${photographers[0].city}, ${photographers[0].country}</p>
                     <p class="photograph-tagline">${photographers[0].tagline}</p>
-                    <p >${photographers[0].tags.map(tag => `<a class="photograph-tags" href="index.html?tagSelected=${tag}">#${tag}</a>`).join(" ")}</p>
+                    <p >${photographers[0].tags.map(tag => 
+                        `<a class="photograph-tags" href="index.html?tagSelected=${tag}">
+                            #${tag}
+                        </a>`).join(" ")}</p>
                 </div>
                 <button id="photograph-contact" title='Contact Me'>Contactez-moi</button>
                 <a href='#' title='${photographers[0].alt}'><img src="${photographers[0].portrait}" alt="${photographers[0].alt}"></a>
@@ -33,5 +36,6 @@ export default class photographerProfil {
         new Modal().modal(photographersData);
 
         new Form().fields();
+        
     }
 }

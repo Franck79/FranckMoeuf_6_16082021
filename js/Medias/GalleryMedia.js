@@ -24,11 +24,11 @@ export default class GalleryMedia {
             if (id == element.photographerId) {
 
                 let sectionPhWorks = document.getElementById('photograph-works');
-
+                // Création balises article qui contiendront chacune un média.
                 let articlePhWork = document.createElement("article");
-
+                // Variable qui contient la méthode pournle switch image ou video.
                 let mediaHTML = media.renderMedia(element);
-                // console.log(sectionPhWorks);
+                // Création du templating a insérer dans les balises articles
                 let workTemplate = `
                 <a href='#' title=${element.photoName}>
                 ${mediaHTML.outerHTML}
@@ -44,16 +44,25 @@ export default class GalleryMedia {
                     </div>
                 </div>
                 `
+                // Insert du template dans les balises articles
                 articlePhWork.innerHTML = workTemplate;
+                // Balises articles attachées au parent, section 'photograph-works'.
                 sectionPhWorks.appendChild(articlePhWork);
+                // On ajoute la classe aux balises article des médias.
                 articlePhWork.classList.add("photograph-work-elt");
+                // Incrémentation pour le total des likes d'un photographe.
                 this.totalLike += parseInt(element.likes);
+                // On ajoute nos éléments html dans un tableau.
                 currentMedia.push(mediaHTML.outerHTML);
+                // On récupre le nom des médias dans un tableau.
                 currentMediaName.push(element.photoName);
-                (new Lightbox())
-                .init(currentMedia, currentMediaName)
+                // On passe en arguments les médias et leur nom
+                // à la méthode init de la classe Lightbox.
+                (new Lightbox()).init(currentMedia, currentMediaName)
+
             }
         })
+
         return this;
     }
 }

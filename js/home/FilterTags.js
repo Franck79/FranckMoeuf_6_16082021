@@ -20,7 +20,7 @@ export default class Filter {
 
                 event.target.classList.remove('actived')
             }
-
+            // On passe en arguments les tags des photographes
             this.sortDomArticle(articles);
         });
     }
@@ -32,7 +32,8 @@ export default class Filter {
         let currentFilters = document.querySelectorAll('ul li.actived');
         
         let filterSelected = [];
-
+        // Pour chaque li actived, on va stocker la valeur de data-filter
+        // dans un tableau.
         currentFilters.forEach(function (currentFilter) {
 
             filterSelected.push(currentFilter.getAttribute("data-filter"));
@@ -53,8 +54,8 @@ export default class Filter {
         let matchTagsArray = filters.filter(tag => tagsArray.includes(tag));
         // On retourne la longueur du tableau des filtres selectionnés 
         // égal à la longueur des filtres des photographes.
-        console.log(tagsArray);
-        console.log(matchTagsArray);
+        // console.log(tagsArray);
+        // console.log(matchTagsArray);
         return filters.length == matchTagsArray.length;
     }
 
@@ -62,13 +63,13 @@ export default class Filter {
     sortDomArticle(articles) {
         
         articles.forEach((article) => {
-
+            // Si la methode trouve le ou les meme tags alors on affiche le photographe.
             if (this.ownAllFilters(article)) {
-                console.log("visible");
+                // console.log("visible");
                 article.style.display = 'block';
 
             } else {
-                console.log("non visible");
+                // console.log("non visible");
                 article.style.display = 'none';
 
             }

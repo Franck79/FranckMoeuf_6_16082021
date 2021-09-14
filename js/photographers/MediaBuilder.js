@@ -7,9 +7,9 @@ export default class MediaBuilder {
     photographersMedias(data) {
 
         let media = data.media;
-
+        
         let gallery = new GalleryMedia().builder(media);
-
+        // on passe en arguments le total des likes et les data média du photographe.
         this.boxLikesAndPrice(gallery.totalLike, data.photographers);
 
         new Likes();
@@ -22,10 +22,12 @@ export default class MediaBuilder {
         const id = window.location.search.split('id=')[1];
 
         photographers.forEach(element => {
-
+            // Si l'id du photograhe est égal a l'id du média.
+            // on écrit le total des likes et son prix dans le bloc box.
             if (id == element.id) {
 
                 let box = document.getElementById('box');
+
                 let boxTemplate = `
                 <span id="total-likes">${totalLike}</span>
                 <i class="fas fa-heart" aria-label='likes'></i>

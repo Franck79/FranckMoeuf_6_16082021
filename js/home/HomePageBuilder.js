@@ -30,7 +30,7 @@ export default class HomePageBuilder {
             <p class="tagline">${photographe.tagline}</p>
             <p class="price">${photographe.price}€/jour</p>
             <ul class="filter">${photographe.tags.map(tag =>
-                `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
+                `<a href='#'><li data-filter="${tag}">#${tag}</li></a>`).join(" ")}</ul> 
             `
             // On ajoute les articles au parent qui est la section photographers.
             sectionPhotographers.appendChild(articlePhotographers);
