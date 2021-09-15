@@ -30,14 +30,17 @@ export default class HomePageBuilder {
             <p class="tagline">${photographe.tagline}</p>
             <p class="price">${photographe.price}€/jour</p>
             <ul class="filter">${photographe.tags.map(tag =>
-                `<a href='#'><li data-filter="${tag}">#${tag}</li></a>`).join(" ")}</ul> 
+                `<a href='#'>
+                    <li data-filter="${tag}">#${tag}</li>
+                </a>`).join(" ")}
+            </ul> 
             `
             // On ajoute les articles au parent qui est la section photographers.
             sectionPhotographers.appendChild(articlePhotographers);
             // On ecrit le template dans les balises article.
             articlePhotographers.innerHTML = templatePhotographer;
         })
-
+        new Filter().getDefaultSelectedFilter();
         new Filter().filterTags();
         new Scroll().scrollButton();
     }
