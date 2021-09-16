@@ -5,8 +5,9 @@ export default class DropDownMenu {
     dropDown(data) {
 
         let arrowOpen = document.getElementsByClassName('sort-btn');
-        console.log(arrowOpen);
+        
         let arrowClose = document.getElementsByClassName('arrow-up-close');
+        
         let hiddenSort = document.getElementsByClassName('hidden-sort');
         // Si on clique sur la fleche d'ouverture
         // la liste cachée apparait.

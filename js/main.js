@@ -29,7 +29,8 @@ import MediaBuilder from './photographers/MediaBuilder.js';
         }
         // On passe les données dans Home page (photograph-es, Scroll et Filtres)
         new HomePageBuilder().displayPhotographers(data);
-    }).catch(() => {
+    }).catch((error) => {
         console.error('Failed to load ApiFishEye');
+        console.log(error);
     })
 })();

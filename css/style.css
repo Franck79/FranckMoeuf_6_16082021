@@ -18,6 +18,11 @@ li.actived {
     background-color: #901C1C;
     color: #fff;
 }
+.filter li:hover,
+li.actived {
+    background-color: #901C1C;
+    color: #fff;
+}
 
 ul li {
     border: .5px solid #C4C4C4;

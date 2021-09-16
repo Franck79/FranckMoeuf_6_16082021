@@ -13,7 +13,7 @@ export default class Form {
         form.addEventListener('submit', (e) => {
 
             e.preventDefault();
-            
+            // On applique les regex pour vérifier si les champs sont valides.
             let isValid = this.checkNames(firstName, regex) &&
                 this.checkNames(lastName, regex) &&
                 this.checkEmail(email) &&
@@ -35,7 +35,7 @@ export default class Form {
             }
         });
     }
-
+    // Fonction pour écrire les valeurs saisies dans les logs
     consoleMessageValid(firstName, lastName, email, message) {
 
         console.group('Contact Message');
@@ -46,7 +46,7 @@ export default class Form {
         console.groupEnd();
 
     }
-
+    // Vérification des erreurs.
     errorVerification(firstName, lastName, email, message, regex) {
 
         this.checkNames(firstName, regex);

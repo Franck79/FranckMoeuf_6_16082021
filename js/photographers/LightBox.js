@@ -11,7 +11,7 @@ export default class LightBox {
     init(currentMedia, currentMediaName) {
         
         let getMedias = Array.from(document.getElementsByClassName('photograph-media'));
-
+        
         getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
 
             let lightBoxMedia = document.getElementById('works-lightbox-media');
