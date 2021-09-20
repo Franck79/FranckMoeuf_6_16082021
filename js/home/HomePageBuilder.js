@@ -19,7 +19,6 @@ export default class HomePageBuilder {
             // On stock les tags d'un photographe dans le className
             // et on ajoute la nom de classe articlePh à la fin de la liste de tags.
             articlePhotographers.className = photographe.tags.join(' ') + ' articlePh';
-
             // Création du templating pour un article contenant
             // les infos et photo d'un photographe.
             let templatePhotographer = `
@@ -41,26 +40,23 @@ export default class HomePageBuilder {
             // On ecrit le template dans les balises article.
             articlePhotographers.innerHTML = templatePhotographer;
 
-            // Ajouter les EventListener sur les boutons de filtres.
-            // Récupérer tous les articles ph.
-
-            // Pour chaque article ajouter un eventListener sur chaque bouton filtre.
-            const articles = document.querySelectorAll('.articlePh');
-                // console.log(articles);
-            articles.forEach(article => {
-                //console.log(article);
-                const buttons = article.querySelectorAll(".filter button")
-
-                buttons.forEach(button => { 
-
-                    button.addEventListener('click', (event) => filterInstance.toggleActivatedClass(event, filterInstance));
-
-                })
-            }) 
-
-
-
         })
+        // Ajouter les EventListener sur les boutons de filtres.
+        // Récupérer tous les articles ph.
+        const articles = document.querySelectorAll(".articlePh");
+            // console.log(articles);
+            // Pour chaque article ajouter un eventListener sur chaque bouton filtre.
+                articles.forEach(article => {
+                
+                    const buttons = article.querySelectorAll(".filter")
+                    // console.log({buttons});
+                    buttons.forEach(button => { 
+
+                        button.addEventListener('click', (event) => filterInstance.toggleActivatedClass(event, filterInstance));
+
+                    })
+                }) 
+                
         filterInstance.getDefaultSelectedFilter();
         filterInstance.filterTags();
         new Scroll().scrollButton();
