@@ -33,7 +33,7 @@ export default class Filter {
         })
 
     }
-    // Ajout classe activated aux éléments <li>
+    // Ajout classe activated aux éléments <li> des tags dans la navigation                                                                                           
     // qui sont cliqués.
     toggleActivatedClass(event, self) {
         // On récupère le nom de la classe 'activated'.
@@ -54,23 +54,20 @@ export default class Filter {
             navButton.classList.remove('activated')
             
         }
-        // Ajouter la classe activated sur le bouton dans le menu nav
+        
         self.toggleActivatedClassPhButton();
         self.sortDomArticle(tagsArticle);
         
 
     }
-    // Filtres des tags
+    // Filtres des tags qui ont été cliqués.
     filterTags() {
         // On stock les éléments html de la liste <ul> du nav
         const filtres = document.querySelector('ul');
-        // console.log({filtres});
-        // éléments html de la liste ul des tags du photographe.
-        // const filtresTagsProfilPh = document.querySelector('.articlePh');
+
         const self = this;
         // EventListener OnCLick sur les <li>
         filtres.addEventListener('click', (event) => this.toggleActivatedClass(event, self));
-        // filtresTagsProfilPh.addEventListener('click', (event) => this.toggleActivatedClass(event, self));
 
     }
 
@@ -118,7 +115,7 @@ export default class Filter {
     compareAllFilters(article) {
         // On stock les filtres selectionnés.
         let filters = this.getActiveFilters();
-        console.log({filters});
+        //console.log({filters});
         // On récupère les tags des photographes. 
         let tagsValue = article.classList.value;
         // On place les valeurs de classValue dans une tableau.
@@ -133,7 +130,7 @@ export default class Filter {
 
     // Articles affichés ou masqués.
     sortDomArticle(tagsArticle) {
-
+        console.log(tagsArticle);
         tagsArticle.forEach((article) => {
             // Si la methode trouve le ou les meme tags alors on affiche le photographe.
             if (this.compareAllFilters(article)) {
