@@ -3,15 +3,11 @@ export default class Filter {
     // qui sont cliqués.
     toggleActivatedClass(event, self) {
         // On récupère le nom de la classe 'actived'.
-        // console.log(event.target.getAttribute("data-filter"));
-
         const navButton = document.getElementById(`nav-${event.target.getAttribute("data-filter")}`);
-        console.log({navButton});
+        
         let classValue = navButton.classList.value;
-        console.log({classValue});
         // On récupère les tags des photographes.
         let tagsArticle = document.querySelectorAll('.articlePh');
-        console.log({tagsArticle});
         // Si l'élément cherché n'est pas présent dans le tableau,
         // la méthode renverra -1, dans ce cas précis on ajoute la classe 'actived",
         // Si on a déjà cliqué dessus on supprime la classe 'acitved'.
