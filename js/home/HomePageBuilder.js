@@ -44,18 +44,17 @@ export default class HomePageBuilder {
         // Ajouter les EventListener sur les boutons de filtres.
         // Récupérer tous les articles ph.
         const articles = document.querySelectorAll(".articlePh");
-            // console.log(articles);
-            // Pour chaque article ajouter un eventListener sur chaque bouton filtre.
-                articles.forEach(article => {
-                
-                    const buttons = article.querySelectorAll(".filter")
-                    // console.log({buttons});
-                    buttons.forEach(button => { 
+        // Pour chaque article ajouter un eventListener sur chaque bouton filtre.
+        articles.forEach(article => {
+        
+            const buttons = article.querySelectorAll(".filter a li")
+            
+            buttons.forEach(button => { 
 
-                        button.addEventListener('click', (event) => filterInstance.toggleActivatedClass(event, filterInstance));
+                button.addEventListener('click', (event) => filterInstance.toggleActivatedClass(event, filterInstance));
 
-                    })
-                }) 
+            })
+        })
                 
         filterInstance.getDefaultSelectedFilter();
         filterInstance.filterTags();

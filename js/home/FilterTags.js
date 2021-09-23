@@ -1,4 +1,37 @@
 export default class Filter {
+
+    toggleActivedClassPhButton() {
+
+        // Ajouter les EventListener sur les boutons de filtres.
+        // Récupérer tous les articles ph.
+        const articles = document.querySelectorAll(".articlePh");
+        
+        articles.forEach(article => {
+        
+            const buttons = article.querySelectorAll(".filter a li")
+
+            const navButtons = Array.from(document.querySelectorAll(".nav-button"))
+            
+            const navButtonsActivated = navButtons.filter((navButton) => navButton.classList.contains("actived"))
+            
+            buttons.forEach(button => { 
+                console.log(button);
+                const filterValue = button.getAttribute("data-filter")
+                console.log(filterValue);
+                console.log(navButtonsActivated.some((navButton) => navButton.getAttribute("data-filter") === filterValue));
+                if (navButtonsActivated.some((navButton) => navButton.getAttribute("data-filter") === filterValue)) {
+
+                    button.classList.add("actived")
+
+                } else {
+                   
+                    button.classList.remove("actived")
+
+                }
+            })
+        })
+
+    }
     // Ajout classe actived aux éléments <li>
     // qui sont cliqués.
     toggleActivatedClass(event, self) {
@@ -14,32 +47,16 @@ export default class Filter {
         if (classValue.indexOf('actived') === -1) {
             
             navButton.classList.add('actived')
-            // Pour chaque article Ph ajouter la classe actived sur le bouton qui a le meme tag
-        //     tagsArticle.forEach(article => {
-
-            
-            // tagsArticle.forEach(article => { 
-
-            //     const buttons = article.querySelectorAll(".filter")
-            //     // console.log({buttons});
-            //     buttons.forEach(button => {
-            //         // console.log(button.classList.value.indexOf("actived"));
-            //         if (button.classList.value.indexOf(event.target.getAttribute("data-filter")) >= 0) {
-            //             // console.log("add");
-            //             button.classList.add('actived')
-
-            //         }
-
-            //     })
-
-            // })
+        
         } else {
 
             navButton.classList.remove('actived')
             
         }
         // Ajouter la classe actived sur le bouton dans le menu nav
-            self.sortDomArticle(tagsArticle);
+        self.toggleActivedClassPhButton();
+        self.sortDomArticle(tagsArticle);
+        
 
     }
     // Filtres des tags
@@ -100,16 +117,13 @@ export default class Filter {
     compareAllFilters(article) {
         // On stock les filtres selectionnés.
         let filters = this.getActiveFilters();
-        
+        console.log({filters});
         // On récupère les tags des photographes. 
         let tagsValue = article.classList.value;
-        
         // On place les valeurs de classValue dans une tableau.
         let tagsArray = tagsValue.split(' ');
-        
         // On filtre les tags des photographes présents dans le tableau des tags selectionnés.
         let intersection = filters.filter(tag => tagsArray.includes(tag));
-        
         // On retourne la longueur du tableau des filtres selectionnés 
         // égal à la longueur des filtres des photographes.
         return filters.length == intersection.length;
