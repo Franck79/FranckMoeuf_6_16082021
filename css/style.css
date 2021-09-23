@@ -14,13 +14,13 @@ html {
 }
 
 nav ul li:hover,
-li.actived {
+li.activated {
     background-color: #901C1C;
     color: #fff;
 }
 
 .filter li:hover,
-li.actived {
+li.activated {
     background-color: #901C1C;
     color: #fff;
 }

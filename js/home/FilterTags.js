@@ -1,60 +1,61 @@
 export default class Filter {
-
-    toggleActivedClassPhButton() {
+    // Fonction pour récupérer les filtres tags sur les photographes.
+    toggleActivatedClassPhButton() {
 
         // Ajouter les EventListener sur les boutons de filtres.
         // Récupérer tous les articles ph.
         const articles = document.querySelectorAll(".articlePh");
         
         articles.forEach(article => {
-        
+            // On récupère les tags des photographes 
             const buttons = article.querySelectorAll(".filter a li")
-
+            // On construit un array contenant les boutons dans la navigation.
             const navButtons = Array.from(document.querySelectorAll(".nav-button"))
-            
-            const navButtonsActivated = navButtons.filter((navButton) => navButton.classList.contains("actived"))
+            // On filtre les tags qui ont la classe activated.
+            const navButtonsActivated = navButtons.filter((navButton) => 
+                navButton.classList.contains("activated"))
             
             buttons.forEach(button => { 
-                console.log(button);
+                
                 const filterValue = button.getAttribute("data-filter")
-                console.log(filterValue);
-                console.log(navButtonsActivated.some((navButton) => navButton.getAttribute("data-filter") === filterValue));
-                if (navButtonsActivated.some((navButton) => navButton.getAttribute("data-filter") === filterValue)) {
+            
+                if (navButtonsActivated.some((navButton) => 
+                    navButton.getAttribute("data-filter") === filterValue)) {
 
-                    button.classList.add("actived")
+                    button.classList.add("activated")
 
                 } else {
                    
-                    button.classList.remove("actived")
+                    button.classList.remove("activated")
 
                 }
             })
         })
 
     }
-    // Ajout classe actived aux éléments <li>
+    // Ajout classe activated aux éléments <li>
     // qui sont cliqués.
     toggleActivatedClass(event, self) {
-        // On récupère le nom de la classe 'actived'.
+        // On récupère le nom de la classe 'activated'.
         const navButton = document.getElementById(`nav-${event.target.getAttribute("data-filter")}`);
         
         let classValue = navButton.classList.value;
         // On récupère les tags des photographes.
         let tagsArticle = document.querySelectorAll('.articlePh');
         // Si l'élément cherché n'est pas présent dans le tableau,
-        // la méthode renverra -1, dans ce cas précis on ajoute la classe 'actived",
+        // la méthode renverra -1, dans ce cas précis on ajoute la classe 'activated",
         // Si on a déjà cliqué dessus on supprime la classe 'acitved'.
-        if (classValue.indexOf('actived') === -1) {
+        if (classValue.indexOf('activated') === -1) {
             
-            navButton.classList.add('actived')
+            navButton.classList.add('activated')
         
         } else {
 
-            navButton.classList.remove('actived')
+            navButton.classList.remove('activated')
             
         }
-        // Ajouter la classe actived sur le bouton dans le menu nav
-        self.toggleActivedClassPhButton();
+        // Ajouter la classe activated sur le bouton dans le menu nav
+        self.toggleActivatedClassPhButton();
         self.sortDomArticle(tagsArticle);
         
 
@@ -73,14 +74,14 @@ export default class Filter {
 
     }
 
-    // On récupère les filtres avec la classe 'Actived'
+    // On récupère les filtres avec la classe 'Activated'
     // et on les push dans l'array 'filterSelected'.    
     getActiveFilters() {
 
-        let currentFilters = document.querySelectorAll('ul li.actived');
+        let currentFilters = document.querySelectorAll('ul li.activated');
         
         let filterSelected = [];
-        // Pour chaque li actived, on va stocker la valeur de data-filter
+        // Pour chaque li activated, on va stocker la valeur de data-filter
         // dans un tableau.
         currentFilters.forEach(function (currentFilter) {
 
@@ -93,7 +94,7 @@ export default class Filter {
     }
     // On récupère la valeur d'un tag selectionné dans le paramètre tagSelected de l'url,
     // depuis le profil d'un photographe.
-    // et on lui ajoute la classe actived.
+    // et on lui ajoute la classe activated.
     getDefaultSelectedFilter() {
         // On récupère la valeur contenu dans la paramètre d'url.
         let tagSelected = window.location.search.split('tagSelected=')[1];
@@ -105,8 +106,8 @@ export default class Filter {
         let tagsArticle = document.querySelectorAll(`.articlePh`);
         // 1. Récupérer le li nav tag.
         const elementSelected = document.getElementById(`nav-${tagSelected}`);
-        // 2. Ajouter la classe actived a l'élément trouvé.
-        elementSelected.classList.add('actived');
+        // 2. Ajouter la classe activated a l'élément trouvé.
+        elementSelected.classList.add('activated');
 
         this.sortDomArticle(tagsArticle);
 
