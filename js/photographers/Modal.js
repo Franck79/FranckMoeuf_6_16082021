@@ -25,6 +25,21 @@ export default class Modal {
     // Lancement du Modal.
     launchModal() {
 
+        // Focus à l'ouverture du Modal.
+        document.addEventListener("focus", function(event) {
+
+            const focusForm = document.getElementById("form-dialog");
+        
+            if (!focusForm.contains(event.target)) {
+
+                event.stopPropagation();
+
+                focusForm.focus();
+
+            }
+        
+        }, true);
+
         let modalBackground = document.getElementById("form-dialog");
 
         modalBackground.style.display = 'block';
