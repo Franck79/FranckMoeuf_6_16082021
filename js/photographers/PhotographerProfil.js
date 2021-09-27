@@ -26,7 +26,8 @@ export default class photographerProfil {
                             #${tag}
                         </a>`).join(" ")}</p>
                 </div>
-                <button id="photograph-contact" title='Contact Me'>Contactez-moi</button>
+                <button type="button" aria-haspopup="dialog" aria-controls="form-dialog" 
+                    id="photograph-contact" title='Contact Me'>Contactez-moi</button>
                 <a href='#' title='${photographers[0].alt}'><img src="${photographers[0].portrait}" alt="${photographers[0].alt}"></a>
             </article>
             `
