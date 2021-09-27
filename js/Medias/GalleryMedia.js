@@ -44,7 +44,6 @@ export default class GalleryMedia {
                     </div>
                 </div>
                 `
-                console.log(element.date);
                 // Insert du template dans les balises articles
                 articlePhWork.innerHTML = workTemplate;
                 // Balises articles attachées au parent, section 'photograph-works'.

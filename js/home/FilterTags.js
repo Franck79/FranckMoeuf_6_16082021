@@ -130,7 +130,7 @@ export default class Filter {
 
     // Articles affichés ou masqués.
     sortDomArticle(tagsArticle) {
-        console.log(tagsArticle);
+        
         tagsArticle.forEach((article) => {
             // Si la methode trouve le ou les meme tags alors on affiche le photographe.
             if (this.compareAllFilters(article)) {
