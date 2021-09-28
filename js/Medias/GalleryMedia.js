@@ -26,7 +26,7 @@ export default class GalleryMedia {
                 let sectionPhWorks = document.getElementById('photograph-works');
                 // Création balises article qui contiendront chacune un média.
                 let articlePhWork = document.createElement("article");
-                // Variable qui contient la méthode pournle switch image ou video.
+                // Variable qui contient la méthode pour le switch image ou video.
                 let mediaHTML = media.renderMedia(element);
                 // Création du templating a insérer dans les balises articles
                 let workTemplate = `
