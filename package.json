@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/Franck79/FranckMoeuf_6_16082021#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0"
   }
