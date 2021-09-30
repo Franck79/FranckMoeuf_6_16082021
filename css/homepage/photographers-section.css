@@ -1,9 +1,9 @@
 /* Section des photographes */
 .articlePh {
-    margin: .5rem;
     padding: .3rem;
     text-align: center;
-    width: 22rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .articlePh a {
@@ -47,6 +47,10 @@ section {
     width: 100%;
 }
 
+#photographers {
+    justify-content: flex-start;
+}
+
 section img {
     /* background-color: #59ce26; */
     border-radius: 50%;
@@ -73,5 +77,9 @@ section img:hover {
 
     section {
         margin-top: 5rem;
+    }
+
+    .articlePh {
+        width: 33%;
     }
 }

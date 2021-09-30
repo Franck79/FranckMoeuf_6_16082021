@@ -13,22 +13,22 @@ html {
     font-family: 'DM Sans', sans-serif;
 }
 
-nav ul li:hover,
-li.activated {
+.nav-button:hover,
+.nav-button.activated,
+.photograph-button:hover,
+.photograph-button.activated {
     background-color: #901C1C;
     color: #fff;
 }
 
-.filter li:hover,
-li.activated {
-    background-color: #901C1C;
-    color: #fff;
-}
 
-ul li {
+
+.nav-button,
+.photograph-button {
     border: .5px solid #C4C4C4;
     border-radius: 11px;
     color: #901C1C;
+    font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     list-style: none;
@@ -36,4 +36,6 @@ ul li {
     padding: .0625rem .375rem;
     text-decoration: none;
     transition: all .2s;
+    background: #fff;
+    cursor: pointer;
 }

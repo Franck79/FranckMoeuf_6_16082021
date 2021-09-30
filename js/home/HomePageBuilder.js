@@ -30,9 +30,8 @@ export default class HomePageBuilder {
             <p class="tagline">${photographe.tagline}</p>
             <p class="price">${photographe.price}€/jour</p>
             <ul class="filter">${photographe.tags.map(tag =>
-                `<a href="#">
-                    <li data-filter="${tag}" id="nav-${tag}">#${tag}</li>
-                </a>`).join(" ")}
+                `<button class="photograph-button" data-filter="${tag}" id="nav-${tag}">#${tag}</button>
+                `).join(" ")}
             </ul> 
             `
             // On ajoute les articles au parent qui est la section photographers.
@@ -47,7 +46,7 @@ export default class HomePageBuilder {
         // Pour chaque article ajouter un eventListener sur chaque bouton filtre.
         articles.forEach(article => {
         
-            const buttons = article.querySelectorAll(".filter a li")
+            const buttons = article.querySelectorAll(".filter .photograph-button")
             
             buttons.forEach(button => { 
 

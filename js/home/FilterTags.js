@@ -8,7 +8,7 @@ export default class Filter {
         
         articles.forEach(article => {
             // On récupère les tags des photographes 
-            const buttons = article.querySelectorAll(".filter a li")
+            const buttons = article.querySelectorAll(".filter .photograph-button")
             // On construit un array contenant les boutons dans la navigation.
             const navButtons = Array.from(document.querySelectorAll(".nav-button"))
             // On filtre les tags qui ont la classe activated.
@@ -66,7 +66,7 @@ export default class Filter {
         const filtres = document.querySelector('ul');
 
         const self = this;
-        // EventListener OnCLick sur les <li>
+        // EventListener OnCLick sur les <button>
         filtres.addEventListener('click', (event) => this.toggleActivatedClass(event, self));
 
     }
@@ -75,7 +75,7 @@ export default class Filter {
     // et on les push dans l'array 'filterSelected'.    
     getActiveFilters() {
 
-        let currentFilters = document.querySelectorAll('ul li.activated');
+        let currentFilters = document.querySelectorAll('ul .nav-button.activated');
         
         let filterSelected = [];
         // Pour chaque li activated, on va stocker la valeur de data-filter
