@@ -109,6 +109,19 @@ export default class LightBox {
             let lightBoxMedia = document.getElementById('works-lightbox-media');
             let lightBoxName = document.getElementById('works-lightbox-name');
 
+            // Touche Entrer pour ouvrir.
+            if (key.code == "Enter") {
+            
+                let src = currentMedia[this.currentIndex];
+                let nameSrc = currentMediaName[this.currentIndex];
+                let lightBox = document.getElementById('works-lightbox');
+
+                lightBox.style.display = 'block';
+
+                lightBoxMedia.innerHTML = `${src}`;
+                lightBoxName.innerHTML = `${nameSrc}`;
+
+            }
             // Touche Escape pour fermer.
             if (key.code == "Escape") {
 
