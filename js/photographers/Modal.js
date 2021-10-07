@@ -8,7 +8,16 @@ export default class Modal {
         let modalButton = document.getElementById("photograph-contact");
         let closeButton = document.getElementsByClassName('close-form-icon');
         
+        let modalBackground = document.getElementById("form-dialog");
+        // Fermeture du Modal avec la touche "Escape".
+        document.addEventListener('keydown', (key) => {
 
+            if (key.code === "Escape") {
+
+                modalBackground.style.display = 'none';
+    
+            }
+        })
         if (modalButton) {
 
             modalButton.addEventListener('click', this.launchModal);
@@ -50,15 +59,6 @@ export default class Modal {
     closeModal() {
 
         let modalBackground = document.getElementById("form-dialog");
-        // Fermeture du Modal avec la touche "Escape".
-        document.addEventListener('keydown', (key) => {
-
-            if (key.code == "Escape") {
-
-                modalBackground.style.display = 'none';
-    
-            }
-        })
         
         modalBackground.style.display = 'none';
 

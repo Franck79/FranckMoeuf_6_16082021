@@ -18,21 +18,35 @@ export default class DropDownMenu {
                 hiddenSort[0].style.display = 'block';
 
             });
-            // On fait apparaitre la liste avec le clavier.
-            arrowOpen[0].addEventListener('keydown', (key) => {
-
-                if(key.code === "Enter") {
-
-                    hiddenSort[0].style.display = 'block';
-
-                }
-                
-
-            });
 
             this.sortMedias(data);
 
         }
+        // On fait apparaitre la liste avec le clavier.
+        arrowOpen[0].addEventListener('keydown', (key) => {
+
+            if(key.code == "Enter") {
+
+                hiddenSort[0].style.display = 'block';
+
+            }
+            
+
+        });
+         // Focus à l'ouverture du Modal.
+         document.addEventListener("focus", function(event) {
+
+            const focusForm = document.getElementsByClassName("hidden-sort");
+        
+            if (!focusForm.contains(event.target)) {
+
+                event.stopPropagation();
+
+                focusForm.focus();
+
+            }
+        
+        }, true);
         // Si on clique sur la flèche de fermeture
         // le bloc cachée disparait.
         if (arrowClose) {
@@ -45,7 +59,7 @@ export default class DropDownMenu {
             // On cache la liste au clavier.
             arrowClose[0].addEventListener('keydown', (key) => {
                 
-                if (key.code === "Escpape") {
+                if (key.code == "Escpape") {
 
                     hiddenSort[0].style.display = "none";
 
