@@ -39,7 +39,10 @@ export default class GalleryMedia {
                     <span class="photograph-work-like">
                         <a class="like-counter">${element.likes}</a>
                     </span>
-                    <i class="far fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
+                    
+                        <i class="far fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}">
+                        </i>
+                    
                     </div>
                 </div>
                 `
