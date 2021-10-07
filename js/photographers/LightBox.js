@@ -29,7 +29,7 @@ export default class LightBox {
             lightBoxName.innerHTML = `${nameSrc}`;
 
         }))
-
+        
         this.previous(document.querySelector('.left-arrow-lightbox'), currentMedia, currentMediaName);
 
         this.next(document.querySelector('.right-arrow-lightbox'), currentMedia, currentMediaName);
@@ -109,17 +109,19 @@ export default class LightBox {
 
             let lightBoxMedia = document.getElementById('works-lightbox-media');
             let lightBoxName = document.getElementById('works-lightbox-name');
+            
+            if (key.code == "Space") {
 
-            if (key.code == "Enter") {
                 let lightBox = document.getElementById('works-lightbox');
                 lightBox.style.display = 'block';
+
                 let src = currentMedia[this.currentIndex];
                 let nameSrc = currentMediaName[this.currentIndex];
+
                 lightBoxMedia.innerHTML = `${src}`;
                 lightBoxName.innerHTML = `${nameSrc}`;
 
             }
-
             // Touche Escape pour fermer.
             if (key.code == "Escape") {
 

@@ -9,6 +9,15 @@ export default class DropDownMenu {
         let arrowClose = document.getElementsByClassName('arrow-up-close');
         
         let hiddenSort = document.getElementsByClassName('hidden-sort');
+        // On cache la liste au clavier.
+        document.addEventListener('keydown', (key) => {
+
+            if (key.code == "Escape") {
+
+                hiddenSort[0].style.display = 'none';
+                
+            }
+        })
         // Si on clique sur la fleche d'ouverture
         // la liste cachée apparait.
         if (arrowOpen) {
@@ -22,30 +31,6 @@ export default class DropDownMenu {
             this.sortMedias(data);
 
         }
-        // On fait apparaitre la liste avec le clavier.
-        arrowOpen[0].addEventListener('keydown', (key) => {
-
-            if(key.code == "Enter") {
-
-                hiddenSort[0].style.display = 'block';
-
-            }
-            
-        });
-         // Focus à l'ouverture du Modal.
-         document.addEventListener("focus", function(event) {
-
-            const focusForm = document.getElementsByClassName("hidden-sort");
-        
-            if (!focusForm.contains(event.target)) {
-
-                event.stopPropagation();
-
-                focusForm.focus();
-
-            }
-        
-        }, true);
         // Si on clique sur la flèche de fermeture
         // le bloc cachée disparait.
         if (arrowClose) {
@@ -53,18 +38,6 @@ export default class DropDownMenu {
             arrowClose[0].addEventListener('click', () => {
 
                 hiddenSort[0].style.display = "none";
-
-            });
-            // On cache la liste au clavier.
-            arrowClose[0].addEventListener('keydown', (key) => {
-                
-                if (key.code == "Escpape") {
-
-                    hiddenSort[0].style.display = "none";
-
-                }
-
-                
 
             });
         }
