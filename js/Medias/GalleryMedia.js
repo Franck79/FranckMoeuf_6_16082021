@@ -35,7 +35,6 @@ export default class GalleryMedia {
                 </a>
                 <div class="photograph-work-elt-text">
                     <h2 class="photograph-work-title">${element.photoName}</h2>
-                    <span class="photograph-work-price">${element.price} €</span>
                     <div class='photograph-elt-like'>
                     <span class="photograph-work-like">
                         <a class="like-counter">${element.likes}</a>

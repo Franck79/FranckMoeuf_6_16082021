@@ -18,6 +18,17 @@ export default class DropDownMenu {
                 hiddenSort[0].style.display = 'block';
 
             });
+            // On fait apparaitre la liste avec le clavier.
+            arrowOpen[0].addEventListener('keydown', (key) => {
+
+                if(key.code === "Enter") {
+
+                    hiddenSort[0].style.display = 'block';
+
+                }
+                
+
+            });
 
             this.sortMedias(data);
 
@@ -29,6 +40,18 @@ export default class DropDownMenu {
             arrowClose[0].addEventListener('click', () => {
 
                 hiddenSort[0].style.display = "none";
+
+            });
+            // On cache la liste au clavier.
+            arrowClose[0].addEventListener('keydown', (key) => {
+                
+                if (key.code === "Escpape") {
+
+                    hiddenSort[0].style.display = "none";
+
+                }
+
+                
 
             });
         }
