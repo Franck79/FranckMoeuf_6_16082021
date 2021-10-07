@@ -31,7 +31,6 @@ export default class DropDownMenu {
 
             }
             
-
         });
          // Focus à l'ouverture du Modal.
          document.addEventListener("focus", function(event) {
