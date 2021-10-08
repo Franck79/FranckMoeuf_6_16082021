@@ -3,25 +3,21 @@ export default class Likes {
     constructor() {
 
         let media = document.getElementById('photograph-works');
-        console.log(media);
         // EventListener sur l'icone 'heart'.
         media.addEventListener('click', (e) => {
             // Si la classe n'est pas défini,
             // on initialise la valeur a vide.
             let classListTarget = typeof e.target.classList === 'undefined' ? [] : e.target.classList.value.split(' ');
-            console.log(classListTarget);
             // retourne true si l'index n'est pas -1.
             let hasClassBtn = classListTarget.indexOf('heart-btn') != -1;
-            console.log(hasClassBtn);
             // Si hasClassBtn est a true.
             if (hasClassBtn) {
                 
                 let totalLikes = parseInt(document.getElementById('total-likes').innerHTML);
                 // Compteur de Likes d'un média.
                 let counterLike = e.target.parentNode.firstElementChild.firstElementChild;
-                console.log(counterLike);
+
                 let likeValue = parseInt(counterLike.innerHTML);
-                console.log(likeValue);
                 // Si l'index est différent de -1, alors on retourne true.
                 let isLiked = classListTarget.indexOf('isLiked') != -1;
                 // On incrémente le total de likes dans la box html si isLiked est a true.
