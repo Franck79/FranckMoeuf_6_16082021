@@ -52,7 +52,14 @@
     font-size: 1em;
     font-weight: 400;
 }
-
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
 @media (min-width: 1300px) {
     #photograph-works {
         justify-content: space-between;
