@@ -106,12 +106,12 @@ export default class LightBox {
     keyboard(currentMedia, currentMediaName) {
 
         document.addEventListener('keydown', (key) => {
-            console.log(key);
+            
             let lightBoxMedia = document.getElementById('works-lightbox-media');
             let lightBoxName = document.getElementById('works-lightbox-name');
 
-            if (key.code === "Space") {
-
+            if (key.code == "Space") {
+                
                 let lightBox = document.getElementById('works-lightbox');
                 lightBox.style.display = 'block';
 
