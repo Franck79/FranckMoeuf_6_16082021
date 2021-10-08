@@ -21,6 +21,7 @@ export default class Likes {
                 let counterLike = e.target.parentNode.firstElementChild.firstElementChild;
                 console.log(counterLike);
                 let likeValue = parseInt(counterLike.innerHTML);
+                console.log(likeValue);
                 // Si l'index est différent de -1, alors on retourne true.
                 let isLiked = classListTarget.indexOf('isLiked') != -1;
                 // On incrémente le total de likes dans la box html si isLiked est a true.
