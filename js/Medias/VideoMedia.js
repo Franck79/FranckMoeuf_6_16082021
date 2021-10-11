@@ -4,7 +4,8 @@ export default class VideoMedia {
     createHTML(element) {
 
         let eltVideo = document.createElement('video');
-        eltVideo.setAttribute("controls", "controls")
+        eltVideo.setAttribute("autoplay", "autoplay");
+        eltVideo.setAttribute("controls", "hidden");
         eltVideo.setAttribute('src', element.video);
         eltVideo.setAttribute('role', 'button');
         eltVideo.className = 'photograph-media';

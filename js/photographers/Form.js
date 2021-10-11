@@ -3,7 +3,6 @@ export default class Form {
     fields() {
         // Validation des champs en récuperant les éléments du DOM.
         let form = document.getElementById('contact-form');
-        let firstName = document.getElementById('first-name');
         let lastName = document.getElementById('last-name');
         let email = document.getElementById('email');
         let message = document.getElementById('message');
@@ -14,32 +13,31 @@ export default class Form {
 
             e.preventDefault();
             // On applique les regex pour vérifier si les champs sont valides.
-            let isValid = this.checkNames(firstName, regex) &&
+            let isValid = 
                 this.checkNames(lastName, regex) &&
                 this.checkEmail(email) &&
                 this.checkMessage(message);
 
             if (isValid) {
 
-                firstName.style.border = 'none';
+                
                 lastName.style.border = 'none';
                 email.style.border = 'none';
                 message.style.border = 'none';
-                this.consoleMessageValid(firstName, lastName, email, message);
+                this.consoleMessageValid(lastName, email, message);
                 document.getElementById('contact-form').reset();
 
             } else {
 
-                this.errorVerification(firstName, lastName, email, message, regex);
+                this.errorVerification(lastName, email, message, regex);
 
             }
         });
     }
     // Fonction pour écrire les valeurs saisies dans les logs
-    consoleMessageValid(firstName, lastName, email, message) {
+    consoleMessageValid(lastName, email, message) {
 
         console.group('Contact Message');
-        console.log('Prénom : ' + firstName.value);
         console.log('Nom : ' + lastName.value);
         console.log('Email : ' + email.value);
         console.log('Message : ' + message.value);
@@ -47,9 +45,8 @@ export default class Form {
 
     }
     // Vérification des erreurs.
-    errorVerification(firstName, lastName, email, message, regex) {
+    errorVerification(lastName, email, message, regex) {
 
-        this.checkNames(firstName, regex);
         this.checkNames(lastName, regex);
         this.checkEmail(email);
         this.checkMessage(message);
